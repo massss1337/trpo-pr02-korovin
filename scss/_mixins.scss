@@ -1,0 +1,8 @@
+@use "variables" as v;
+@use "functions" as f;
+
+@mixin surface($padding: f.space()) {
+  padding: $padding;
+  background-color: v.$surface;
+  border-radius: v.$radius;
+}

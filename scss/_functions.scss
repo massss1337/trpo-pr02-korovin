@@ -1,0 +1,5 @@
+@use "variables" as v;
+
+@function space($factor: 1) {
+  @return v.$space * $factor;
+}

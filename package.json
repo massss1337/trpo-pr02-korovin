@@ -1,0 +1,12 @@
+{
+  "name": "trpo-pr02-korovin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "sass --no-source-map scss/styles.scss css/styles.css",
+    "watch": "sass --watch --no-source-map scss/styles.scss:css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}

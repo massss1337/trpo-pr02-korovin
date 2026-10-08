@@ -1,0 +1,128 @@
+@use "variables" as v;
+@use "functions" as f;
+@use "mixins" as m;
+
+.site-header {
+  padding-block: f.space(1.5);
+  background-color: v.$surface;
+  border-bottom: 1px solid v.$border;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.intro {
+  h1 {
+    margin-bottom: f.space();
+    font-size: 32px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.filters {
+  @include m.surface();
+  border: 1px solid v.$border;
+
+  h2 {
+    margin-bottom: f.space();
+    font-size: 22px;
+  }
+}
+
+.filters__group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  legend {
+    margin-bottom: f.space();
+    padding: 0;
+    font-weight: 700;
+  }
+}
+
+.filters__option {
+  display: flex;
+  align-items: center;
+  gap: f.space(0.5);
+  margin-bottom: f.space(0.75);
+  cursor: pointer;
+
+  input {
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: v.$accent;
+  }
+}
+
+.products {
+  h2 {
+    margin-bottom: f.space();
+    font-size: 24px;
+  }
+}
+
+.card {
+  @include m.surface();
+  min-width: 0;
+  border: 1px solid v.$border;
+  overflow-wrap: anywhere;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: v.$radius * 0.5;
+  }
+
+  &__title {
+    margin: f.space() 0 f.space(0.5);
+    font-size: 18px;
+  }
+
+  p {
+    margin: f.space(0.5) 0;
+  }
+
+  &__category {
+    color: v.$muted;
+  }
+
+  &__price {
+    font-weight: 700;
+  }
+}
+
+.catalog-layout:has(#filter-books:checked)
+  .card:not([data-category="books"]),
+.catalog-layout:has(#filter-courses:checked)
+  .card:not([data-category="courses"]),
+.catalog-layout:has(#filter-tools:checked)
+  .card:not([data-category="tools"]) {
+  display: none;
+}
+
+.info {
+  @include m.surface(f.space(1.5));
+  margin-block: f.space(2);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.site-footer {
+  padding-block: f.space(1.5);
+  border-top: 1px solid v.$border;
+
+  p {
+    margin-bottom: 0;
+  }
+}

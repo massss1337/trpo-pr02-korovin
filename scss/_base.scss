@@ -1,0 +1,30 @@
+@use "variables" as v;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: v.$text;
+  background-color: v.$background;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+a {
+  color: v.$accent;
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid v.$accent;
+  outline-offset: 3px;
+}
